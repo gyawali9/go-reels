@@ -11,6 +11,18 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  // ✅ Add override for `.d.ts` files
+  {
+    files: ["**/*.d.ts"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      "no-var": "off", // Disable ESLint's no-var rule
+    },
+  },
 ];
 
 export default eslintConfig;
