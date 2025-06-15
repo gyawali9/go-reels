@@ -1,5 +1,5 @@
 import { model } from "mongoose";
-import { IVideo } from "@/app/models/Video";
+import { IVideo } from "@/models/Video";
 
 export type VideoFormData = Omit<IVideo, "_id">;
 
